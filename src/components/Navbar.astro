@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import rumboLogo from '../assets/logo-rumbo.webp';
+---
+<nav class="fixed top-0 left-0 z-[9999] flex flex-row justify-between items-center w-full">
+    <div class="flex-1 px-5">
+        <Image src={rumboLogo} alt="Logo Rumbo Comunicación" width={200} height={200}/>
+    </div>
+        
+    <div class="text-end p-6 bg-[#774F4F]">
+        <ul class="flex flex-row justify-between items-center gap-10 text-[#EDE8E3]">
+            <li class="reveal-link">
+                <span class="text">FOTOGRAFÍA Y VIDEO</span>
+                <span class="clone">FOTOGRAFÍA Y VIDEO</span>
+            </li>
+            <li class="reveal-link">
+                <span class="text">DISEÑO GRÁFICO</span>
+                <span class="clone">DISEÑO GRÁFICO</span>
+            </li>
+            <li class="reveal-link">
+                <span class="text">COMMUNITY MANAGER</span>
+                <span class="clone">COMMUNITY MANAGER</span>
+            </li>
+            <li class="reveal-link">
+                <span class="text">CONTACTO</span>
+                <span class="clone">CONTACTO</span>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+    .reveal-link {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .reveal-link .text,
+    .reveal-link .clone {
+        display: block;
+        transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    
+    .reveal-link .clone {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        pointer-events: none;
+    }
+    
+    .reveal-link:hover .text {
+        transform: translateY(-100%);
+    }
+    
+    .reveal-link:hover .clone {
+        transform: translateY(-100%);
+    }
+</style>
