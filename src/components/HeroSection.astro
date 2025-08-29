@@ -1,86 +1,117 @@
----
-import Auto from "../assets/photography-video/auto.jpg"
-import Axis from "../assets/photography-video/Axis.jpg"
-import Videoclip from "../assets/photography-video/videoclip.jpg"
-import Deporte from "../assets/photography-video/deporte.jpg"
----
+<section class="w-full h-screen bg-[#EDE8E3]">
+	<div class="flex flex-col h-full justify-center items-center">
+		<div class="flex flex-col gap-4 text-center justify-between items-center">
+			<div class="text-[8vw] text-[#774F4F] font-bold">Somos Rumbo</div>
+			<p class="max-w-2xl mx-auto text-[2vw] text-[#774F4F]">
+				Creamos experiencias digitales únicas que conectan marcas con
+				audiencias, transformando ideas en resultados extraordinarios.
+			</p>
+			<button
+				class="cursor-pointer w-fit flex justify-center items-center bg-[#774F4F] text-[#EDE8E3] px-6 py-3 rounded-xl
+         transition-all duration-300 ease-in-out
+         hover:bg-[#5c3b3b] hover:scale-105 hover:shadow-lg hover:shadow-[#774F4F]/50"
+			>
+				Empezar proyecto
+			</button>
+		</div>
 
-<section class="w-full h-screen">
-  <div class="flex flex-col h-full justify-center items-center">
-    <div class="flex flex-col gap-4 text-center justify-between items-center">
-      <div class="text-[8vw] text-[#774F4F] font-bold">Somos Rumbo</div>
-      <p class="max-w-2xl mx-auto text-[2vw] text-[#774F4F]">
-        Creamos experiencias digitales únicas que conectan marcas con audiencias, transformando ideas en resultados extraordinarios.
-      </p>
-      <button
-  class="cursor-pointer w-fit flex justify-center items-center bg-[#774F4F] text-[#EDE8E3] px-6 py-3 rounded-xl 
-         transition-all duration-300 ease-in-out 
-         hover:bg-[#5c3b3b] hover:scale-105 hover:shadow-lg hover:shadow-[#774F4F]/50">
-  Empezar proyecto
-</button>
-    </div>
+		<!-- Marquee con imágenes -->
+		<div class="marquee-container mt-10">
+			<div class="marquee-track">
+				<div class="card">
+					<img src="/assets/photography-video/auto.jpg" alt="Auto" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/Axis.jpg" alt="Axis" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/videoclip.jpg" alt="Videoclip" />
+				</div>
+				<!-- duplico para loop infinito -->
+				<div class="card">
+					<img src="/assets/photography-video/auto-2.jpg" alt="Auto" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/padel-chico.jpg" alt="Axis" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/perfume-2.jpg" alt="Videoclip" />
+				</div>
+				<div class="card">
+					<img
+						src="/assets/photography-video/videoclip-auto.jpg"
+						alt="Deporte"
+					/>
+				</div>
 
-    <!-- Marquee con imágenes -->
-    <div class="marquee-container mt-10">
-      <div class="marquee-track">
-        <div class="card"><img src={Auto.src} alt="Auto" /></div>
-        <div class="card"><img src={Axis.src} alt="Axis" /></div>
-        <div class="card"><img src={Videoclip.src} alt="Videoclip" /></div>
-        <!-- duplico para loop infinito -->
-        <div class="card"><img src={Auto.src} alt="Auto" /></div>
-        <div class="card"><img src={Axis.src} alt="Axis" /></div>
-        <div class="card"><img src={Videoclip.src} alt="Videoclip" /></div>
-        <div class="card"><img src={Deporte.src} alt="Deporte" /></div>
+				<div class="card">
+					<img src="/assets/photography-video/perfume.jpg" alt="Auto" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/Axis.jpg" alt="Axis" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/videoclip.jpg" alt="Videoclip" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/auto-2.jpg" alt="Deporte" />
+				</div>
 
-        <div class="card"><img src={Auto.src} alt="Auto" /></div>
-        <div class="card"><img src={Axis.src} alt="Axis" /></div>
-        <div class="card"><img src={Videoclip.src} alt="Videoclip" /></div>
-        <div class="card"><img src={Deporte.src} alt="Deporte" /></div>
-
-        <div class="card"><img src={Auto.src} alt="Auto" /></div>
-        <div class="card"><img src={Axis.src} alt="Axis" /></div>
-        <div class="card"><img src={Videoclip.src} alt="Videoclip" /></div>
-        <div class="card"><img src={Deporte.src} alt="Deporte" /></div>
-      </div>
-    </div>
-  </div>
+				<div class="card">
+					<img src="/assets/photography-video/padel-chico.jpg" alt="Auto" />
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/perfume.jpg" alt="Axis" />
+				</div>
+				<div class="card">
+					<img
+						src="/assets/photography-video/videoclip-auto.jpg"
+						alt="Videoclip"
+					/>
+				</div>
+				<div class="card">
+					<img src="/assets/photography-video/deporte.jpg" alt="Deporte" />
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <style>
-  .marquee-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
+	.marquee-container {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+	}
 
-  .marquee-track {
-    display: inline-flex;
-    gap: 2rem;
-    animation: marquee 15s linear infinite;
-  }
+	.marquee-track {
+		display: inline-flex;
+		gap: 2rem;
+		animation: marquee 15s linear infinite;
+	}
 
-  .card {
-    width: 250px;     /* mismo ancho para todas */
-    height: 150px;    /* mismo alto para todas */
-    flex-shrink: 0;
-    border-radius: 12px;
-    overflow: hidden; /* asegura que la img no se salga */
-    background: #000; /* opcional, fondo detrás de la img */
-  }
+	.card {
+		width: 250px; /* mismo ancho para todas */
+		height: 150px; /* mismo alto para todas */
+		flex-shrink: 0;
+		border-radius: 12px;
+		overflow: hidden; /* asegura que la img no se salga */
+		background: #000; /* opcional, fondo detrás de la img */
+	}
 
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* recorta y mantiene proporción */
-    display: block;
-  }
+	.card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* recorta y mantiene proporción */
+		display: block;
+	}
 
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+	@keyframes marquee {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
 </style>

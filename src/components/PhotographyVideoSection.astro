@@ -1,214 +1,239 @@
----
-import Auto from "../assets/photography-video/auto.jpg"
-import Axis from "../assets/photography-video/Axis.jpg"
-import Videoclip from "../assets/photography-video/videoclip.jpg"
-import Deporte from "../assets/photography-video/deporte.jpg"
----
+<div class="photography-video-container bg-[#EDE8E3]">
+	<h1 class="section-title">CAPTURANDO MOMENTOS</h1>
 
-<div class="photography-video-container">
-  <h1 class="section-title">CAPTURANDO MOMENTOS</h1>
-  
-  <!-- Text Marquee -->
-  <div class="text-marquee-container">
-    <div class="text-marquee-track">
-      <span class="marquee-text">FOTOGRAFÍA PROFESIONAL</span>
-      <span class="marquee-text">VIDEO CORPORATIVO</span>
-      <span class="marquee-text">EVENTOS SOCIALES</span>
-      <span class="marquee-text">PRODUCTOS</span>
-      <span class="marquee-text">RETRATOS</span>
-      <span class="marquee-text">DRONE</span>
-      <span class="marquee-text">EDICIÓN</span>
-      <span class="marquee-text">POST-PRODUCCIÓN</span>
-      <!-- Duplicado para loop infinito -->
-      <span class="marquee-text">FOTOGRAFÍA PROFESIONAL</span>
-      <span class="marquee-text">VIDEO CORPORATIVO</span>
-      <span class="marquee-text">EVENTOS SOCIALES</span>
-      <span class="marquee-text">PRODUCTOS</span>
-      <span class="marquee-text">RETRATOS</span>
-      <span class="marquee-text">DRONE</span>
-      <span class="marquee-text">EDICIÓN</span>
-      <span class="marquee-text">POST-PRODUCCIÓN</span>
-    </div>
-  </div>
-  
-  <section class="lines">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </section>
+	<!-- Text Marquee -->
+	<div class="text-marquee-container">
+		<div class="text-marquee-track">
+			<span class="marquee-text">FOTOGRAFÍA PROFESIONAL</span>
+			<span class="marquee-text">VIDEO PROFESIONAL</span>
+			<span class="marquee-text">EVENTOS</span>
+			<span class="marquee-text">PRODUCTOS</span>
+			<span class="marquee-text">EDICIÓN</span>
+			<span class="marquee-text">POST-PRODUCCIÓN</span>
+			<!-- Duplicado para loop infinito -->
+			<span class="marquee-text">REDES SOCIALES</span>
+			<span class="marquee-text">VIDEO PROFESIONAL</span>
+			<span class="marquee-text">EVENTOS</span>
+			<span class="marquee-text">PRODUCTOS</span>
+			<span class="marquee-text">EDICIÓN</span>
+			<span class="marquee-text">POST-PRODUCCIÓN</span>
+		</div>
+	</div>
 
-  <section class="gallery">
-    <div class="img" style={`background-image: url(${Auto.src})`}></div>
-    <div class="img" style={`background-image: url(${Axis.src})`}></div>
-    <div class="img" style={`background-image: url(${Videoclip.src})`}></div>
-    <div class="img" style={`background-image: url(${Deporte.src})`}></div>
-    <div class="img" style={`background-image: url(${Auto.src})`}></div>
-    <div class="img" style={`background-image: url(${Axis.src})`}></div>
-    <div class="img" style={`background-image: url(${Videoclip.src})`}></div>
-    <div class="img" style={`background-image: url(${Deporte.src})`}></div>
-    <div class="img" style={`background-image: url(${Auto.src})`}></div>
-  </section>
+	<section class="lines">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</section>
+
+	<section class="gallery">
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/videoclip-auto.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/Axis.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/videoclip.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/deporte.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/auto.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/perfume.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/perfume-2.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/auto-2.jpg")`}
+		>
+		</div>
+		<div
+			class="img"
+			style={`background-image: url("/assets/photography-video/padel-chico.jpg")`}
+		>
+		</div>
+	</section>
 </div>
 
 <section></section>
 
 <style>
-  body {
-    overscroll-behavior: none;
-  }
-  body::-webkit-scrollbar {
-    display: none;
-  }
+	body {
+		overscroll-behavior: none;
+	}
+	body::-webkit-scrollbar {
+		display: none;
+	}
 
-  /* Título de la sección */
-  .section-title {
-    font-size: 4vw;
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    font-weight: bold;
-    width: 100%;
-    pointer-events: none;
-    color: white;
-    opacity: 0;
-  }
+	/* Título de la sección */
+	.section-title {
+		font-size: 4vw;
+		text-align: center;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+		font-weight: bold;
+		width: 100%;
+		pointer-events: none;
+		color: white;
+		opacity: 0;
+	}
 
-  /* Contenedor principal */
-  .photography-video-container {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+	/* Contenedor principal */
+	.photography-video-container {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
 
-  /* Text Marquee */
-  .text-marquee-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 80px;
-    background: rgba(119, 79, 79, 0.1);
-    border-top: 1px solid rgba(119, 79, 79, 0.3);
-    border-bottom: 1px solid rgba(119, 79, 79, 0.3);
-    z-index: 15;
-    margin-top: 0;
-  }
+	/* Text Marquee */
+	.text-marquee-container {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 80px;
+		background: rgba(119, 79, 79, 0.1);
+		border-top: 1px solid rgba(119, 79, 79, 0.3);
+		border-bottom: 1px solid rgba(119, 79, 79, 0.3);
+		z-index: 15;
+		margin-top: 0;
+	}
 
-  .text-marquee-track {
-    display: inline-flex;
-    gap: 3rem;
-    animation: textMarquee 20s linear infinite;
-    white-space: nowrap;
-    padding: 20px 0;
-  }
+	.text-marquee-track {
+		display: inline-flex;
+		gap: 3rem;
+		animation: textMarquee 20s linear infinite;
+		white-space: nowrap;
+		padding: 20px 0;
+	}
 
-  .marquee-text {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #774F4F;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    flex-shrink: 0;
-    padding: 0 1rem;
-  }
+	.marquee-text {
+		font-size: 1.2rem;
+		font-weight: 600;
+		color: #774f4f;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		flex-shrink: 0;
+		padding: 0 1rem;
+	}
 
-  @keyframes textMarquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+	@keyframes textMarquee {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
 
-  /* Galería */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 700px; /* 🔥 todas las filas iguales */
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 2;
-  }
+	/* Galería */
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: 700px; /* 🔥 todas las filas iguales */
+		margin: 0;
+		padding: 0;
+		position: relative;
+		z-index: 2;
+	}
 
-  .img {
-    width: 100%;
-    height: 100%; /* 🔥 ocupa toda la celda */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    z-index: -1;
-  }
+	.img {
+		width: 100%;
+		height: 100%; /* 🔥 ocupa toda la celda */
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		z-index: -1;
+	}
 
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .gallery {
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-rows: 500px;
-    }
-  }
+	/* Responsive */
+	@media (max-width: 1024px) {
+		.gallery {
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-rows: 500px;
+		}
+	}
 
-  @media (max-width: 640px) {
-    .gallery {
-      grid-template-columns: 1fr;
-      grid-auto-rows: 400px;
-    }
-  }
+	@media (max-width: 640px) {
+		.gallery {
+			grid-template-columns: 1fr;
+			grid-auto-rows: 400px;
+		}
+	}
 </style>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import Lenis from "lenis";
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	import Lenis from "lenis";
 
-  gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollTrigger);
 
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  });
+	const lenis = new Lenis({
+		duration: 1.2,
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+	});
 
-  function raf(time:number) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+	function raf(time: number) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+	requestAnimationFrame(raf);
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".gallery",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
-  });
+	const tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".gallery",
+			start: "top top",
+			end: "bottom bottom",
+			scrub: true,
+		},
+	});
 
-  tl.to(".img", {
-    stagger: 0.2,
-    y: -200, /* 🔥 movimiento más natural */
-    ease: "none",
-  });
+	tl.to(".img", {
+		stagger: 0.2,
+		y: -200 /* 🔥 movimiento más natural */,
+		ease: "none",
+	});
 
-  // Control title visibility based on section scroll
-  ScrollTrigger.create({
-    trigger: ".photography-video-container",
-    start: "top center",
-    end: "bottom center",
-    onEnter: () => {
-      gsap.to(".section-title", { opacity: 1, duration: 0.3 });
-    },
-    onLeave: () => {
-      gsap.to(".section-title", { opacity: 0, duration: 0.3 });
-    },
-    onEnterBack: () => {
-      gsap.to(".section-title", { opacity: 1, duration: 0.3 });
-    },
-    onLeaveBack: () => {
-      gsap.to(".section-title", { opacity: 0, duration: 0.3 });
-    }
-  });
+	// Control title visibility based on section scroll
+	ScrollTrigger.create({
+		trigger: ".photography-video-container",
+		start: "top center",
+		end: "bottom center",
+		onEnter: () => {
+			gsap.to(".section-title", { opacity: 1, duration: 0.3 });
+		},
+		onLeave: () => {
+			gsap.to(".section-title", { opacity: 0, duration: 0.3 });
+		},
+		onEnterBack: () => {
+			gsap.to(".section-title", { opacity: 1, duration: 0.3 });
+		},
+		onLeaveBack: () => {
+			gsap.to(".section-title", { opacity: 0, duration: 0.3 });
+		},
+	});
 </script>
