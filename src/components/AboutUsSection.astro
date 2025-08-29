@@ -1,6 +1,6 @@
 <section
 	class="relative min-h-screen text-[#e7ddd5] bg-cover bg-center"
-	style={`background-image:url("/assets/about-us-bg.jpeg");`}
+	style={`background-image:url('/assets/about-us-bg.jpeg');`}
 >
 	<div class="absolute inset-0 bg-black/60"></div>
 
@@ -8,17 +8,21 @@
 		class="relative flex flex-col min-h-screen p-[clamp(16px,6vw,80px)] gap-y-[4vh]"
 	>
 		<h2
-			class="m-0 uppercase font-extrabold leading-[0.95] tracking-[0.02em] text-[clamp(36px,6vw,150px)]"
+			class="m-0 uppercase font-extrabold leading-[0.95] tracking-[0.02em] text-[clamp(36px,6vw,150px)] text-center sm:text-left"
 		>
 			<span>SOBRE</span><br />
 			<span>NOSOTROS</span>
 		</h2>
 
-		<div class="space-y-[3vh]">
-			<h4 class="text-[3.2vw] font-bold leading-tight max-w-[80%]">
+		<div class="space-y-[3vh] flex flex-col items-center sm:items-start">
+			<h4
+				class="text-[clamp(18px,3.2vw,48px)] font-bold leading-tight max-w-full sm:max-w-[80%] text-center sm:text-left"
+			>
 				Todo lo que tu marca necesita, en un solo equipo
 			</h4>
-			<p class="text-[1.4vw] leading-relaxed max-w-[70%] opacity-90">
+			<p
+				class="text-[clamp(14px,1.4vw,22px)] leading-relaxed max-w-full sm:max-w-[70%] opacity-90 text-center sm:text-left"
+			>
 				Unimos estrategia, creatividad y producción para acompañarte desde la
 				creación de tu identidad visual hasta la gestión de tus redes, el
 				desarrollo de tu web y la producción de contenido audiovisual
@@ -30,7 +34,7 @@
 		</div>
 
 		<ul
-			class="flex flex-wrap items-center justify-around w-full gap-[clamp(12px,3vw,40px)] m-0 p-0 list-none font-extrabold text-[clamp(14px,2vw,28px)] my-auto"
+			class="flex flex-wrap items-center justify-center sm:justify-around w-full gap-[clamp(12px,3vw,40px)] m-0 p-0 list-none font-extrabold text-[clamp(14px,2vw,28px)] my-auto"
 			aria-label="Qué hacemos"
 		>
 			<li
@@ -68,9 +72,11 @@
 		</ul>
 
 		<div
-			class="mt-auto flex justify-between items-end gap-6 text-[1.4vw] font-bold opacity-95 flex-col md:flex-row md:gap-[4vw]"
+			class="mt-auto flex flex-col gap-4 items-center sm:flex-row sm:justify-between sm:items-end sm:gap-[4vw] text-[clamp(14px,1.4vw,22px)] font-bold opacity-95"
 		>
-			<p class="m-0 italic">"Tu marca, nuestra inspiración"</p>
+			<p class="m-0 italic text-center sm:text-left">
+				"Tu marca, nuestra inspiración"
+			</p>
 			<button
 				class="bg-[#E0D7D3] text-[#774F4F] px-5 py-4 rounded-full text-sm font-semibold hover:bg-[#774F4F] hover:text-[#E0D7D3] transition-colors duration-300 flex items-center gap-2 mx-auto cursor-pointer"
 			>
@@ -88,7 +94,9 @@
 						d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
 				</svg>
 			</button>
-			<p class="m-0 italic">"Tu presencia online en buenas manos"</p>
+			<p class="m-0 italic text-center sm:text-right">
+				"Tu presencia online en buenas manos"
+			</p>
 		</div>
 	</div>
 </section>
