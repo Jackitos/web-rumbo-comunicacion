@@ -1,152 +1,180 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Archive';
-  src: url('/fonts/Archive-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Archive';
+	src: url('/fonts/Archive-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+html,
+body {
+	overflow-x: hidden;
 }
 
 /* Regular */
 @font-face {
-  font-family: 'Arial Nova';
-  src: url('/fonts/ArialNova/ArialNova.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Arial Nova';
+	src: url('/fonts/ArialNova/ArialNova.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Bold */
 @font-face {
-  font-family: 'Arial Nova';
-  src: url('/fonts/ArialNova/ArialNova-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Arial Nova';
+	src: url('/fonts/ArialNova/ArialNova-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Italic */
 @font-face {
-  font-family: 'Arial Nova';
-  src: url('/fonts/ArialNova/ArialNova-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Arial Nova';
+	src: url('/fonts/ArialNova/ArialNova-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
 
 /* Bold Italic */
 @font-face {
-  font-family: 'Arial Nova';
-  src: url('/fonts/ArialNova/ArialNova-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Arial Nova';
+	src: url('/fonts/ArialNova/ArialNova-BoldItalic.ttf') format('truetype');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
 
 /* Light */
 @font-face {
-  font-family: 'Arial Nova';
-  src: url('/fonts/ArialNova/ArialNova-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Arial Nova';
+	src: url('/fonts/ArialNova/ArialNova-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Light Italic */
 @font-face {
-  font-family: 'Arial Nova';
-  src: url('fonts/ArialNova/ArialNova-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Arial Nova';
+	src: url('/fonts/ArialNova/ArialNova-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
 
 /* Condensed Regular */
 @font-face {
-  font-family: 'Arial Nova Condensed';
-  src: url('/fonts/ArialNova/ArialNovaCond.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Arial Nova Condensed';
+	src: url('/fonts/ArialNova/ArialNovaCond.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Condensed Bold */
 @font-face {
-  font-family: 'Arial Nova Condensed';
-  src: url('/fonts/ArialNova/ArialNovaCond-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Arial Nova Condensed';
+	src: url('/fonts/ArialNova/ArialNovaCond-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Condensed Italic */
 @font-face {
-  font-family: 'Arial Nova Condensed';
-  src: url('/fonts/ArialNova/ArialNovaCond-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Arial Nova Condensed';
+	src: url('/fonts/ArialNova/ArialNovaCond-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
 
 /* Condensed Bold Italic */
 @font-face {
-  font-family: 'Arial Nova Condensed';
-  src: url('/fonts/ArialNova/ArialNovaCond-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Arial Nova Condensed';
+	src: url('/fonts/ArialNova/ArialNovaCond-BoldItalic.ttf') format('truetype');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
 
 /* Condensed Light */
 @font-face {
-  font-family: 'Arial Nova Condensed';
-  src: url('/fonts/ArialNova/ArialNovaCond-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Arial Nova Condensed';
+	src: url('/fonts/ArialNova/ArialNovaCond-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Condensed Light Italic */
 @font-face {
-  font-family: 'Arial Nova Condensed';
-  src: url('/fonts/ArialNova/ArialNovaCond-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
+	font-family: 'Arial Nova Condensed';
+	src: url('/fonts/ArialNova/ArialNovaCond-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'artnuvo';
-  src: url('/fonts/Art-nuvo.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'artnuvo';
+	src: url('/fonts/Art-nuvo.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
-@theme {
-  --font-artnuvo: 'Artnuvo';
-  --font-archive: 'Archive';
-  --font-arialnova: 'Arial Nova';
+
+
+@layer base {
+
+	*,
+	*::before,
+	*::after {
+
+		box-sizing: border-box;
+	}
+
+	* {
+
+		margin: 0;
+
+		@layer utilities {
+			.font-arialnova {
+				font-family: 'Arial Nova', Arial, sans-serif;
+			}
+
+			.font-archive {
+				font-family: 'Archive';
+			}
+
+			.font-artnuvo {
+				font-family: 'artnuvo';
+			}
+		}
+	}
 }
 
-@layer 
-base
- {
-  *, *::before, *::after {
-    
-box-sizing
-: border-box;
-  }
+@layer base {
 
-  * {
-    
-margin
-: 0;
-    
-padding
-: 0;
-    
-box-sizing
-: border-box;
-  }
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 }
