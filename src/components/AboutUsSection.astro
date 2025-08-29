@@ -1,0 +1,170 @@
+---
+import bg from "../assets/about-us-bg.jpeg";
+---
+
+<section
+  class="relative min-h-screen text-[#e7ddd5] bg-cover bg-center"
+  style={`background-image:url(${bg.src});`}
+>
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div
+    class="relative flex flex-col min-h-screen p-[clamp(16px,6vw,80px)] gap-y-[4vh]"
+  >
+    <h2
+      class="m-0 uppercase font-extrabold leading-[0.95] tracking-[0.02em] text-[clamp(36px,6vw,150px)]"
+    >
+      <span>SOBRE</span><br />
+      <span>NOSOTROS</span>
+    </h2>
+
+    <div class="space-y-[3vh]">
+      <h4 class="text-[3.2vw] font-bold leading-tight max-w-[80%]">
+        Todo lo que tu marca necesita, en un solo equipo
+      </h4>
+      <p class="text-[1.4vw] leading-relaxed max-w-[70%] opacity-90">
+        Unimos estrategia, creatividad y producción
+        para acompañarte desde la creación de tu identidad visual hasta la
+        gestión de tus redes, el desarrollo de tu web y la producción de
+        contenido audiovisual profesional.
+        <br /><br />
+        Una sola agencia, todas las soluciones. Para que puedas enfocarte en hacer
+        crecer tu marca, mientras nosotros nos encargamos del resto.
+      </p>
+    </div>
+
+    <ul
+      class="flex flex-wrap items-center justify-around w-full gap-[clamp(12px,3vw,40px)] m-0 p-0 list-none font-extrabold text-[clamp(14px,2vw,28px)] my-auto"
+      aria-label="Qué hacemos"
+    >
+      <li
+        class="inline-flex items-center gap-[clamp(8px,1vw,16px)] whitespace-nowrap"
+      >
+        <span
+          class="inline-block w-[clamp(10px,2.1vw,24px)] h-[clamp(10px,2.1vw,24px)] rounded-full bg-[#f2f2f2] shadow-inner flex-none"
+          aria-hidden="true"></span>
+        Creamos
+      </li>
+      <li
+        class="inline-flex items-center gap-[clamp(8px,1vw,16px)] whitespace-nowrap"
+      >
+        <span
+          class="inline-block w-[clamp(10px,2.1vw,24px)] h-[clamp(10px,2.1vw,24px)] rounded-full bg-[#f2f2f2] shadow-inner flex-none"
+          aria-hidden="true"></span>
+        Conectamos
+      </li>
+      <li
+        class="inline-flex items-center gap-[clamp(8px,1vw,16px)] whitespace-nowrap"
+      >
+        <span
+          class="inline-block w-[clamp(10px,2.1vw,24px)] h-[clamp(10px,2.1vw,24px)] rounded-full bg-[#f2f2f2] shadow-inner flex-none"
+          aria-hidden="true"></span>
+        Diseñamos
+      </li>
+      <li
+        class="inline-flex items-center gap-[clamp(8px,1vw,16px)] whitespace-nowrap"
+      >
+        <span
+          class="inline-block w-[clamp(10px,2.1vw,24px)] h-[clamp(10px,2.1vw,24px)] rounded-full bg-[#f2f2f2] shadow-inner flex-none"
+          aria-hidden="true"></span>
+        Impulsamos
+      </li>
+    </ul>
+
+    <div
+      class="mt-auto flex justify-between items-end gap-6 text-[1.4vw] font-bold opacity-95 flex-col md:flex-row md:gap-[4vw]"
+    >
+      <p class="m-0 italic">"Tu marca, nuestra inspiración"</p>
+      <button
+        class="bg-[#E0D7D3] text-[#774F4F] px-5 py-4 rounded-full text-sm font-semibold hover:bg-[#774F4F] hover:text-[#E0D7D3] transition-colors duration-300 flex items-center gap-2 mx-auto cursor-pointer"
+      >
+        Solicitar Consulta Gratuita
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </button>
+      <p class="m-0 italic">"Tu presencia online en buenas manos"</p>
+    </div>
+  </div>
+</section>
+
+<section
+  class="min-h-screen bg-[#E2D9D5] flex flex-col items-center justify-center p-[clamp(16px,6vw,80px)]"
+>
+  <h1
+    class="text-center text-[clamp(28px,4vw,72px)] font-bold text-[#774F4F] mb-[8vh]"
+  >
+    UNA PEQUEÑA INTRODUCCIÓN
+  </h1>
+
+  <div
+    class="w-full flex flex-wrap justify-center items-start gap-[clamp(32px,6vw,80px)] max-w-7xl"
+  >
+    <!-- Founder 1 -->
+    <div
+      class="flex flex-col items-center justify-center gap-[clamp(16px,2vw,24px)] max-w-[500px] text-center"
+    >
+      <div
+        class="relative w-[clamp(80px,12vw,160px)] h-[clamp(80px,12vw,160px)]"
+      >
+        <img
+          src="/src/assets/founders/juli-silva.jpeg"
+          alt="Juli Silva"
+          class="w-full h-full object-cover rounded-full"
+        />
+      </div>
+      <div class="border border-[#774F4F] w-fit py-1 px-3">
+        <p class="text-[clamp(10px,1.2vw,16px)] font-medium">Co-Founder</p>
+      </div>
+      <h2 class="text-[clamp(18px,2.5vw,32px)] font-bold text-[#774F4F]">
+        JULI SILVA
+      </h2>
+      <p class="text-[clamp(12px,1.4vw,18px)] text-black leading-relaxed">
+        Este año finalizo la Licenciatura en Gestión de Medios y
+        Entretenimiento, y actualmente me dedico a la comunicación digital. Soy
+        Community Manager y gestiono pauta publicitaria en Meta Ads y Google
+        Ads. Además de la estrategia, me apasiona la fotografía profesional. En
+        Rumbo, aporto una mirada integral para que cada marca encuentre su
+        identidad y logre comunicarla con claridad, estética y coherencia.
+      </p>
+    </div>
+
+    <!-- Founder 2 -->
+    <div
+      class="flex flex-col items-center justify-center gap-[clamp(16px,2vw,24px)] max-w-[500px] text-center"
+    >
+      <div
+        class="relative w-[clamp(80px,12vw,160px)] h-[clamp(80px,12vw,160px)]"
+      >
+        <img
+          src="/src/assets/founders/thiago-fragoso.jpeg"
+          alt="Thiago Fragoso"
+          class="w-full h-full object-cover rounded-full"
+        />
+      </div>
+      <div class="border border-[#774F4F] w-fit py-1 px-3">
+        <p class="text-[clamp(10px,1.2vw,16px)] font-medium">Co-Founder</p>
+      </div>
+      <h2 class="text-[clamp(18px,2.5vw,32px)] font-bold text-[#774F4F]">
+        THIAGO FRAGOSO
+      </h2>
+      <p class="text-[clamp(12px,1.4vw,18px)] text-black leading-relaxed">
+        En Rumbo estoy a cargo de la administración general y del área
+        comercial. Organizo, gestiono y mantengo en funcionamiento todo lo
+        necesario para que los procesos sean ordenados, eficientes y
+        sostenibles. Desde la planificación interna hasta el trato con los
+        clientes, mi foco está en que cada parte del trabajo se ejecute de forma
+        clara, profesional y en tiempo
+      </p>
+    </div>
+  </div>
+</section>
