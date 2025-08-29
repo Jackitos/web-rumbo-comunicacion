@@ -1,8 +1,12 @@
 <section class="w-full h-screen bg-[#EDE8E3]">
 	<div class="flex flex-col h-full justify-center items-center">
 		<div class="flex flex-col gap-4 text-center justify-between items-center">
-			<div class="text-[8vw] text-[#774F4F] font-bold">Somos Rumbo</div>
-			<p class="max-w-2xl mx-auto text-[2vw] text-[#774F4F]">
+			<div class="text-[8vw] text-[#774F4F] font-bold font-archive">
+				Somos Rumbo
+			</div>
+			<p
+				class="max-w-2xl mx-auto text-[2vw] text-[#774F4F] font-arialnova font-normal"
+			>
 				Creamos experiencias digitales únicas que conectan marcas con
 				audiencias, transformando ideas en resultados extraordinarios.
 			</p>
@@ -112,6 +116,92 @@
 		}
 		100% {
 			transform: translateX(-50%);
+		}
+	}
+
+	/* --- Responsive Styles --- */
+	@media (max-width: 1024px) {
+		.text-[8vw] {
+			font-size: 12vw;
+		}
+		.text-[2vw] {
+			font-size: 3vw;
+		}
+		.card {
+			width: 180px;
+			height: 110px;
+		}
+		.marquee-track {
+			gap: 1rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		section.w-full.h-screen {
+			height: auto;
+			min-height: 100vh;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.text-[8vw] {
+			font-size: 16vw;
+		}
+		.text-[2vw] {
+			font-size: 4vw;
+		}
+		.max-w-2xl {
+			max-width: 90vw;
+		}
+		.card {
+			width: 120px;
+			height: 80px;
+		}
+		.marquee-track {
+			gap: 0.5rem;
+		}
+		.marquee-container {
+			margin-left: -1rem;
+			margin-right: -1rem;
+		}
+		.flex.flex-col.h-full.justify-center.items-center {
+			height: auto;
+			min-height: 100vh;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+		}
+	}
+
+	@media (max-width: 480px) {
+		section.w-full.h-screen {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.text-[8vw] {
+			font-size: 22vw;
+		}
+		.text-[2vw] {
+			font-size: 5vw;
+		}
+		.card {
+			width: 80px;
+			height: 50px;
+		}
+		.marquee-track {
+			gap: 0.25rem;
+		}
+		.flex.flex-col.h-full.justify-center.items-center {
+			height: auto;
+			min-height: 100vh;
+			justify-content: center;
+			align-items: center;
+			display: flex;
 		}
 	}
 </style>
