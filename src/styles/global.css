@@ -135,32 +135,29 @@ body {
 
 
 
+
+.font-arialnova {
+	font-family: 'Arial Nova', Arial, sans-serif;
+}
+
+.font-archive {
+	font-family: 'Archive';
+}
+
+.font-artnuvo {
+	font-family: 'artnuvo';
+}
+
 @layer base {
 
 	*,
 	*::before,
 	*::after {
-
 		box-sizing: border-box;
 	}
 
 	* {
-
 		margin: 0;
-
-		@layer utilities {
-			.font-arialnova {
-				font-family: 'Arial Nova', Arial, sans-serif;
-			}
-
-			.font-archive {
-				font-family: 'Archive';
-			}
-
-			.font-artnuvo {
-				font-family: 'artnuvo';
-			}
-		}
 	}
 }
 
