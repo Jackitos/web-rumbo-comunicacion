@@ -36,7 +36,12 @@
 			>
 				Completá el formulario y te contactaremos a la brevedad
 			</p>
-			<form method="POST" class="flex flex-col gap-6 w-full" name="contact">
+			<form
+				method="POST"
+				id="form"
+				class="flex flex-col gap-6 w-full"
+				name="contact"
+			>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
 					<div class="flex flex-col gap-2 w-full">
 						<label
@@ -45,7 +50,7 @@
 						>
 						<input
 							type="text"
-							name="nombre"
+							name="name"
 							required
 							placeholder="Tu nombre completo"
 							class="px-4 py-2 md:py-3 rounded-xl border border-[#e6dbd6] bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#774F4F] text-[#774F4F] text-sm md:text-base lg:text-lg"
@@ -58,7 +63,7 @@
 						>
 						<input
 							type="text"
-							name="email_telefono"
+							name="email_phone"
 							required
 							placeholder="tu@email.com o +54 9 11 1234-5678"
 							class="px-4 py-2 md:py-3 rounded-xl border border-[#e6dbd6] bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#774F4F] text-[#774F4F] text-sm md:text-base lg:text-lg"
@@ -77,8 +82,8 @@
 							>
 								<input
 									type="checkbox"
-									name="servicios"
-									value="redes"
+									name="services"
+									value="Gestión de redes sociales"
 									class="accent-[#774F4F] w-5 h-5"
 								/>
 								<span class="text-[#774F4F] font-medium"
@@ -90,8 +95,8 @@
 							>
 								<input
 									type="checkbox"
-									name="servicios"
-									value="branding"
+									name="services"
+									value="Diseño gráfico / Branding"
 									class="accent-[#774F4F] w-5 h-5"
 								/>
 								<span class="text-[#774F4F] font-medium"
@@ -103,8 +108,8 @@
 							>
 								<input
 									type="checkbox"
-									name="servicios"
-									value="ads"
+									name="services"
+									value="Pauta publicitaria (Meta Ads / Google Ads)"
 									class="accent-[#774F4F] w-5 h-5"
 								/>
 								<span class="text-[#774F4F] font-medium"
@@ -116,8 +121,8 @@
 							>
 								<input
 									type="checkbox"
-									name="servicios"
-									value="video"
+									name="services"
+									value="Edición de videos"
 									class="accent-[#774F4F] w-5 h-5"
 								/>
 								<span class="text-[#774F4F] font-medium">Edición de videos</span
@@ -128,8 +133,8 @@
 							>
 								<input
 									type="checkbox"
-									name="servicios"
-									value="foto"
+									name="services"
+									value="Fotografía profesional"
 									class="accent-[#774F4F] w-5 h-5"
 								/>
 								<span class="text-[#774F4F] font-medium"
@@ -141,8 +146,8 @@
 							>
 								<input
 									type="checkbox"
-									name="servicios"
-									value="web"
+									name="services"
+									value="Diseño de página web"
 									class="accent-[#774F4F] w-5 h-5"
 								/>
 								<span class="text-[#774F4F] font-medium"
@@ -158,17 +163,55 @@
 						>Tu consulta</label
 					>
 					<textarea
-						name="consulta"
+						name="inquiry"
 						placeholder="Cuéntanos más sobre tu proyecto, objetivos, presupuesto estimado o cualquier pregunta que tengas..."
 						class="px-4 py-2 md:py-3 rounded-xl border border-[#e6dbd6] bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#774F4F] text-[#774F4F] text-sm md:text-base lg:text-lg resize-none h-28 md:h-32 lg:h-36 overflow-y-auto"
 					></textarea>
 				</div>
 				<button
 					type="submit"
-					class="mt-2 px-6 py-2 md:py-3 rounded-xl bg-[#774F4F] text-[#E0D7D3] font-bold shadow-md hover:bg-[#5c3a3a] transition w-full text-base md:text-lg lg:text-xl cursor-pointer"
+					class="submitQuery mt-2 px-6 py-2 md:py-3 rounded-xl bg-[#774F4F] text-[#E0D7D3] font-bold shadow-md hover:bg-[#5c3a3a] transition w-full text-base md:text-lg lg:text-xl cursor-pointer"
 					>Enviar consulta</button
 				>
 			</form>
 		</div>
 	</div>
 </div>
+
+<script>
+	const form = document.querySelector("#form") as HTMLFormElement | null;
+
+	form?.addEventListener("submit", (e) => {
+		e.preventDefault();
+
+		const nameInput =
+			form.querySelector<HTMLInputElement>('input[name="name"]');
+		const emailPhoneInput = form.querySelector<HTMLInputElement>(
+			'input[name="email_phone"]',
+		);
+		const inquiryInput = form.querySelector<HTMLTextAreaElement>(
+			'textarea[name="inquiry"]',
+		);
+		const servicesCheckboxes = form.querySelectorAll<HTMLInputElement>(
+			'input[name="services"]:checked',
+		);
+
+		const name = encodeURIComponent(nameInput?.value || "");
+		const emailPhone = encodeURIComponent(emailPhoneInput?.value || "");
+		const inquiry = encodeURIComponent(inquiryInput?.value || "");
+
+		const checkedServices: string[] = Array.from(servicesCheckboxes).map(
+			(cb) => cb.value,
+		);
+		const servicesText =
+			checkedServices.length > 0
+				? checkedServices.join(", ")
+				: "No especificado";
+
+		const message = `Hola, soy ${name}%0A📧 Contacto: ${emailPhone}%0A💼 Servicios de interés: ${servicesText}%0A📝 Consulta: ${inquiry}`;
+		const url = `https://wa.me/5491149791204?text=${message}`;
+		window.open(url, "_blank");
+
+		form.reset();
+	});
+</script>
