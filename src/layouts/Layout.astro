@@ -4,13 +4,137 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/favicon.ico" />
+		
 		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content="Rumbo Comunicación - Agencia digital especializada en gestión de redes sociales, diseño gráfico, pauta publicitaria, edición de videos, fotografía profesional y diseño de páginas web. Creamos experiencias digitales únicas que conectan marcas con audiencias." />
+		<meta name="keywords" content="agencia digital, redes sociales, diseño gráfico, branding, pauta publicitaria, edición de videos, fotografía profesional, diseño páginas web, marketing digital, community management, Buenos Aires" />
+		<meta name="author" content="Rumbo Comunicación" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="Spanish" />
+		<meta name="revisit-after" content="7 days" />
+		
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://rumbocomunicacion.com.ar/" />
+		<meta property="og:title" content="Rumbo Comunicación - Agencia Digital & Marketing" />
+		<meta property="og:description" content="Transformamos ideas en resultados extraordinarios. Especialistas en redes sociales, diseño gráfico, pauta publicitaria, edición de videos, fotografía profesional y diseño web." />
+		<meta property="og:image" content="https://rumbocomunicacion.com.ar/seo-image" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:site_name" content="Rumbo Comunicación" />
+		
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://rumbocomunicacion.com.ar/" />
+		<meta property="twitter:title" content="Rumbo Comunicación - Agencia Digital & Marketing" />
+		<meta property="twitter:description" content="Transformamos ideas en resultados extraordinarios. Especialistas en redes sociales, diseño gráfico, pauta publicitaria, edición de videos, fotografía profesional y diseño web." />
+		<meta property="twitter:image" content="https://rumbocomunicacion.com.ar/seo-image" />
+		
+		<meta name="theme-color" content="#774F4F" />
+		<meta name="msapplication-TileColor" content="#774F4F" />
+		<meta name="geo.region" content="AR-B" />
+		<meta name="geo.placename" content="Buenos Aires" />
+		<meta name="geo.position" content="-34.6118;-58.3960" />
+		<meta name="ICBM" content="-34.6118, -58.3960" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Rumbo Comunicación",
+			"description": "Agencia digital especializada en gestión de redes sociales, diseño gráfico, pauta publicitaria, fotografía profesional y desarrollo web",
+			"url": "https://rumbocomunicacion.com.ar",
+			"logo": "https://rumbocomunicacion.com.ar/assets/logos/logo-rumbo-full.png",
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"contactType": "customer service",
+				"availableLanguage": "Spanish"
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Buenos Aires",
+				"addressCountry": "AR"
+			},
+			"sameAs": [
+				"https://www.instagram.com/rumbocomunicacion",
+				"https://www.linkedin.com/company/rumbocomunicacion"
+			],
+			"serviceArea": {
+				"@type": "Country",
+				"name": "Argentina"
+			},
+			"areaServed": "Argentina",
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Servicios Digitales",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Gestión de redes sociales",
+							"description": "Creamos y administramos la presencia digital de tu marca en redes sociales"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Diseño Gráfico / Branding",
+							"description": "Diseñamos piezas visuales que reflejan la esencia de tu marca"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Pauta publicitaria",
+							"description": "Optimizamos tus campañas digitales para que lleguen al público correcto"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Edición de videos",
+							"description": "Convertimos tus ideas en videos creativos y dinámicos que aumentan la interacción"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Fotografía profesional",
+							"description": "Capturamos la mejor imagen de tu negocio, productos y equipo"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Diseño de páginas web",
+							"description": "Desarrollamos sitios web modernos, funcionales y adaptados a tu marca"
+						}
+					}
+				]
+			}
+		}
+		</script>
+		
+		<!-- Performance and Core Web Vitals -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+		
+		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
 		<slot />
