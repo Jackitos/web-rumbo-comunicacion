@@ -1,0 +1,340 @@
+<section id="contact" class="w-screen h-auto bg-[#E0D7D3] py-16 px-4 flex flex-col lg:max-w-[1600px] lg:mx-auto lg:px-16">
+  <p class="contact-text lg:text-start">¿Tenes un proyecto en mente? <br />Charlemos</p>
+
+  <a 
+    href="mailto:rumbocomunicacion1@gmail.com" 
+    class="flex flex-row items-center gap-4 mt-6 group hover:opacity-80 transition-opacity"
+  >
+    <span class="mail-text text-[#EDE8E3]">rumbocomunicacion1@gmail.com</span>
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+    >
+      <path
+        d="M17 2H22M22 2V7M22 2L13 11M11 3H6C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V13"
+        stroke="#774F4F"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </a>
+
+  <a href="https://wa.me/541128533814" target="_blank" rel="noopener noreferrer"
+    class="mt-6 px-4 py-2 bg-[#d6c6be] text-[#774F4F] font-archive font-medium w-40 text-center"
+  >
+    CHATEANOS
+</a>
+  
+  <p class="contact-text mt-20">O contanos un poco más</p>
+
+  <!-- Formulario de contacto -->
+  <form class="mt-8 flex flex-col gap-6 max-w-lg lg:max-w-none lg:w-full">
+    <!-- Nombre y Email en fila en desktop -->
+    <div class="flex flex-col gap-6 lg:flex-row lg:gap-12">
+      <!-- Nombre completo -->
+      <div class="form-group lg:flex-1">
+        <label for="nombre" class="form-label">
+          NOMBRE COMPLETO<span class="required-asterisk">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="nombre" 
+          name="nombre" 
+          required 
+          class="form-input"
+          autocomplete="name"
+          placeholder="ej. María González"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group lg:flex-1">
+        <label for="email" class="form-label">
+          EMAIL<span class="required-asterisk">*</span>
+        </label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required 
+          class="form-input"
+          autocomplete="email"
+          placeholder="ej. rumbocomunicacion1@gmail.com"
+        />
+      </div>
+    </div>
+
+    <!-- Teléfono -->
+    <div class="form-group lg:max-w-[calc(50%-1.5rem)]">
+      <label for="telefono" class="form-label">
+        TELÉFONO
+      </label>
+      <input 
+        type="tel" 
+        id="telefono" 
+        name="telefono" 
+        class="form-input"
+        autocomplete="tel"
+        placeholder="ej. +54 11 2345-6789"
+      />
+    </div>
+
+    <!-- Servicios de interés -->
+    <fieldset class="mt-4">
+      <legend class="form-legend">SERVICIOS DE INTERÉS</legend>
+      
+      <div class="flex flex-col gap-3 mt-4 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:gap-y-4">
+        <label class="checkbox-label">
+          <input type="checkbox" name="servicios" value="estrategia" class="checkbox-input" />
+          <span class="checkbox-custom"></span>
+          <span class="checkbox-text">Estrategia de contenido</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="servicios" value="publicidad" class="checkbox-input" />
+          <span class="checkbox-custom"></span>
+          <span class="checkbox-text">Publicidad</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="servicios" value="diseno" class="checkbox-input" />
+          <span class="checkbox-custom"></span>
+          <span class="checkbox-text">Diseño gráfico/Branding</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="servicios" value="edicion" class="checkbox-input" />
+          <span class="checkbox-custom"></span>
+          <span class="checkbox-text">Edición</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="servicios" value="fotografia" class="checkbox-input" />
+          <span class="checkbox-custom"></span>
+          <span class="checkbox-text">Fotografía</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="servicios" value="web" class="checkbox-input" />
+          <span class="checkbox-custom"></span>
+          <span class="checkbox-text">Desarrollo Web</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Tu idea -->
+    <div class="form-group mt-4">
+      <label for="idea" class="form-legend">TU IDEA</label>
+      <textarea 
+        id="idea" 
+        name="idea" 
+        rows="6"
+        class="form-textarea"
+        placeholder="Objetivos, tipo de negocio, presupuesto estimado o aspiraciones de tu proyecto o cualquier duda que tengas"
+      ></textarea>
+    </div>
+
+    <!-- Botón enviar -->
+    <a 
+      id="whatsapp-btn"
+      href="https://wa.me/541128533814" target="_blank" rel="noopener noreferrer"
+      class="mt-4 px-6 py-3 bg-[#774F4F] text-[#EDE8E3] font-archive font-medium uppercase tracking-wide hover:bg-[#5d3d3d] transition-colors text-center"
+    >
+      Enviar
+  </a>
+  </form>
+
+  <script>
+    const btn = document.getElementById('whatsapp-btn');
+    const inputs = document.querySelectorAll('form input, form textarea');
+
+    const updateLink = () => {
+      const nombreInput = document.getElementById('nombre');
+      const emailInput = document.getElementById('email');
+      const telefonoInput = document.getElementById('telefono');
+      const ideaInput = document.getElementById('idea');
+
+      const nombre = nombreInput ? (nombreInput as HTMLInputElement).value : '';
+      const email = emailInput ? (emailInput as HTMLInputElement).value : '';
+      const telefono = telefonoInput ? (telefonoInput as HTMLInputElement).value : '';
+      const idea = ideaInput ? (ideaInput as HTMLTextAreaElement).value : '';
+      
+      const serviciosNodes = document.querySelectorAll('input[name="servicios"]:checked');
+      const servicios = Array.from(serviciosNodes).map(node => {
+        const parent = node.parentElement;
+        const textSpan = parent ? parent.querySelector('.checkbox-text') : null;
+        return textSpan ? (textSpan as HTMLElement).innerText.trim() : '';
+      }).join(', ');
+
+      let msg = "Hola, me contacto desde la web Rumbo.\n\n";
+      if(nombre) msg += `*Nombre:* ${nombre}\n`;
+      if(email) msg += `*Email:* ${email}\n`;
+      if(telefono) msg += `*Teléfono:* ${telefono}\n`;
+      if(servicios) msg += `*Servicios:* ${servicios}\n`;
+      if(idea) msg += `*mensaje:* ${idea}`;
+
+      if (btn) btn.setAttribute('href', `https://wa.me/541128533814?text=${encodeURIComponent(msg)}`);
+    };
+
+    inputs.forEach(input => {
+      input.addEventListener('input', updateLink);
+      input.addEventListener('change', updateLink);
+    });
+
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        const form = document.querySelector('#contact form') as HTMLFormElement;
+        if (form && !form.checkValidity()) {
+          e.preventDefault();
+          form.reportValidity();
+        }
+      });
+    }
+  </script>
+</section>
+
+<style>
+  .contact-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #774f4f;
+    position: relative;
+    -webkit-text-stroke: 3px #000000;
+    paint-order: stroke fill;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .mail-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    -webkit-text-stroke: 3px #774f4f;
+    paint-order: stroke fill;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* Form styles */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .form-label {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #c4b0a8;
+    letter-spacing: 0.05em;
+  }
+
+  .required-asterisk {
+    color: #774f4f;
+    font-size: 1.5em;
+    font-weight: bold;
+    vertical-align: super;
+    line-height: 0;
+    margin-left: 0.1rem;
+  }
+
+  .form-legend {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #774f4f;
+    -webkit-text-stroke: 1px #000000;
+    paint-order: stroke fill;
+    letter-spacing: 0.05em;
+  }
+
+  .form-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #774f4f;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #774f4f;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-input:focus {
+    border-bottom-color: #5d3d3d;
+  }
+
+  .form-input::placeholder {
+    color: #c4b0a8;
+  }
+
+  .form-textarea {
+    background: #d6c6be;
+    border: none;
+    border-radius: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #774f4f;
+    outline: none;
+    resize: vertical;
+    min-height: 150px;
+    font-style: italic;
+  }
+
+  .form-textarea::placeholder {
+    color: #9d8a83;
+    font-style: italic;
+  }
+
+  .form-textarea:focus {
+    box-shadow: inset 0 0 0 2px #774f4f;
+  }
+
+  /* Checkbox styles */
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .checkbox-custom {
+    width: 1.25rem;
+    height: 1.25rem;
+    background: #c4b0a8;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+  }
+
+  .checkbox-input:checked + .checkbox-custom {
+    background: #774f4f;
+  }
+
+  .checkbox-input:focus-visible + .checkbox-custom {
+    outline: 2px solid #774f4f;
+    outline-offset: 2px;
+  }
+
+  .checkbox-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #774f4f;
+  }
+
+  /* Fieldset reset */
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>

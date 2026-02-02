@@ -1,0 +1,111 @@
+---
+import { Image } from 'astro:assets';
+import type { ServiceBlock } from '../types/landing';
+
+interface Props {
+    data: ServiceBlock;
+    id: string;
+}
+
+const { data, id } = Astro.props;
+const firstItem = data.gallery[0];
+const hasVideo = data.gallery.some(item => item.type === 'video');
+const hasMultipleItems = data.gallery.length > 1;
+---
+
+<div 
+    id={id} 
+    class="service-card relative group overflow-hidden rounded-xl w-full h-full cursor-pointer"
+    data-has-video={hasVideo}
+    data-slideshow={hasMultipleItems && !hasVideo}
+>
+    <div class="media-container w-full h-full relative">
+        {data.gallery.map((item, index) => (
+            <div 
+                class={`media-slide absolute inset-0 transition-opacity duration-500 ${index === 0 ? 'opacity-100 z-10': 'opacity-0 z-0'}`}
+                data-index={index}
+                data-type={item.type}
+            >
+                {item.type === 'image' ? (
+                    <Image
+                    src={item.source as ImageMetadata}
+                    alt={item.alt || ''}
+                    class="w-full h-full object-cover"
+                    />
+                ) : (
+                    <video 
+                    src={item.source as string}
+                    muted
+                    loop
+                    playsinline
+                    autoplay
+                    class="w-full h-full object-cover"
+                    ></video>
+                )}
+            </div>
+        ))}
+    </div>
+
+    <div class="absolute bottom-2 left-2 right-2 z-20 pointer-events-none">
+        <h3 class="text-white text-sm sm:text-base md:text-xl font-bold uppercase drop-shadow-lg truncate">{data.title}</h3>
+    </div>
+</div>
+
+<script>
+    function initServiceGallery() {
+        const cards = document.querySelectorAll('.service-card');
+        const intervals = new Map<Element, ReturnType<typeof setInterval>>();
+        
+        // Crear un observer para detectar visibilidad
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const card = entry.target;
+                const video = card.querySelector('video');
+                const shouldSlideshow = card.getAttribute('data-slideshow') === 'true';
+                const slides = card.querySelectorAll('.media-slide');
+                
+                if (entry.isIntersecting) {
+                    // El card ES visible - activar animaciones
+                    if (video) {
+                        video.play().catch(() => {});
+                    }
+                    
+                    if (shouldSlideshow && slides.length > 1 && !intervals.has(card)) {
+                        let currentIndex = 0;
+                        const intervalId = setInterval(() => {
+                            slides[currentIndex].classList.remove('opacity-100', 'z-10');
+                            slides[currentIndex].classList.add('opacity-0', 'z-0');
+                            currentIndex = (currentIndex + 1) % slides.length;
+                            slides[currentIndex].classList.remove('opacity-0', 'z-0');
+                            slides[currentIndex].classList.add('opacity-100', 'z-10');
+                        }, 2000);
+                        intervals.set(card, intervalId);
+                    }
+                } else {
+                    // El card NO es visible - pausar todo
+                    if (video) {
+                        video.pause();
+                    }
+                    
+                    if (intervals.has(card)) {
+                        clearInterval(intervals.get(card));
+                        intervals.delete(card);
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1 // Se activa cuando al menos 10% del elemento es visible
+        });
+        
+        // Observar cada card
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    }
+    
+    document.addEventListener('DOMContentLoaded', initServiceGallery);
+    
+    if (document.readyState === 'complete') {
+        initServiceGallery();
+    }
+</script>

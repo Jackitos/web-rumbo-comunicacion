@@ -1,0 +1,106 @@
+---
+import Image from "astro/components/Image.astro";
+import AboutUsTitleImg from "../assets/about-us/about-us-title.png";
+import AboutUsBg from "../assets/about-us/about-us-bg.jpeg";
+import AboutUsCreativity from "../assets/about-us/about-us-creativity.png";
+import AboutUsStrategy from "../assets/about-us/about-us-strategy.png";
+import AboutUsLeadership from "../assets/about-us/about-us-leadership.png";
+import KnowRumboText from "../assets/know-rumbo-text.png";
+import FounderCard from "./FounderCard.astro";
+import JuliSilva from "../assets/founders/juli-silva.jpeg";
+import ThiagoFragoso from "../assets/founders/thiago-fragoso.jpeg";
+
+const founders = [
+  {
+    name: "Julieta Silva",
+    description:
+      "Este año finalizo la Licenciatura en Gestión de Medios y Entretenimiento, y actualmente me dedico a la comunicación digital. Soy Community Manager y gestiono pauta publicitaria en Meta Ads y Google Ads. Además de la estrategia, me apasiona la fotografía profesional. En Rumbo, aporto una mirada integral para que cada marca encuentre su identidad y logre comunicarla con claridad, estética y coherencia.",
+    imageSrc: JuliSilva,
+    linkedinUrl: "https://linkedin.com/",
+  },
+  {
+    name: "Thiago Fragoso",
+    description:"Este año finalizo la Licenciatura en Gestión de Medios y Entretenimiento, y actualmente me dedico a la comunicación digital. Soy Community Manager y gestiono pauta publicitaria en Meta Ads y Google Ads. Además de la estrategia, me apasiona la fotografía profesional. En Rumbo, aporto una mirada integral para que cada marca encuentre su identidad y logre comunicarla con claridad, estética y coherencia.",
+    imageSrc: ThiagoFragoso,
+    linkedinUrl: "https://linkedin.com/",
+  },
+];
+---
+
+<section id="about-us" class="flex flex-col py-20 px-4 lg:px-8 bg-[#E0D7D3] h-auto max-w-[1600px] mx-auto">
+  <!-- Header Section -->
+  <h4 class="font-archive text-[#774F4F]">SOBRE NOSOTROS</h4>
+  <Image src={AboutUsTitleImg} alt="About Us Title" class="my-4 w-72 lg:w-96 h-auto" />
+  
+  <!-- Main Content - Desktop: Two columns -->
+  <div class="flex flex-col lg:flex-row lg:gap-12 xl:gap-16 lg:items-stretch">
+    <!-- Left Column: Image -->
+    <div class="lg:w-1/2">
+      <Image src={AboutUsBg} alt="About Us Background" class="w-full h-auto lg:h-full lg:object-cover" />
+    </div>
+    
+    <!-- Right Column: Text, Button, Tags -->
+    <div class="lg:w-1/2 flex flex-col lg:justify-center">
+      <p class="font-arialnova font-light text-[#774F4F] text-lg mt-6 lg:mt-0 max-w-lg">
+        Unimos <b class="italic">estrategia</b>, <b class="italic">creatividad</b> y <b
+          class="italic">producción</b
+        > para acompañarte desde la creación de tu identidad visual hasta la gestión de
+        tus redes, el desarrollo de tu web y la producción de contenido audiovisual profesional.
+      </p>
+      <a href="#contact"
+        class="mt-6 px-4 py-2 bg-[#d6c6be] text-[#774F4F] font-archive font-medium w-40 text-center"
+      >
+        CONTACTÁNOS
+    </a>
+      
+      <!-- Tags -->
+      <div class="flex flex-col items-start gap-4 mt-8">
+        <Image
+          src={AboutUsCreativity}
+          alt="About Us Creativity"
+          class="w-3/4 lg:w-80 h-auto"
+        />
+        <Image
+          src={AboutUsStrategy}
+          alt="About Us Strategy"
+          class="w-3/4 lg:w-80 h-auto"
+        />
+        <Image
+          src={AboutUsLeadership}
+          alt="About Us Leadership"
+          class="w-3/4 lg:w-80 h-auto"
+        />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Know Rumbo Section -->
+  <div class="flex flex-col items-end gap-4 mt-20 lg:mt-32">
+    <Image
+      src={KnowRumboText}
+      alt="Know Rumbo Text"
+      class="w-72 lg:w-96 h-auto"
+    />
+    <p class="font-arialnova text-end max-w-80 lg:max-w-md text-[#774F4F] text-xl lg:text-2xl">
+      ¿Quiénes son los que acompañan el crecimiento de tu marca?
+    </p>
+  </div>
+
+  <!-- Founders Section -->
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-52 mt-16 lg:mt-20 max-w-5xl lg:max-w-6xl mx-auto lg:px-8"
+  >
+    {
+      founders.map((founder, index) => (
+        <div class={`flex ${index === 1 ? 'lg:justify-end lg:mt-32' : 'lg:justify-start'}`}>
+          <FounderCard
+            name={founder.name}
+            description={founder.description}
+            imageSrc={founder.imageSrc}
+            linkedinUrl={founder.linkedinUrl}
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>

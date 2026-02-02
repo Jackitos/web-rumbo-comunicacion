@@ -1,0 +1,361 @@
+---
+import { Image } from "astro:assets";
+import projectsTitleImg from "../assets/PROYECTOS.png";
+
+import MariaPaulaImg from "../assets/maria-paula-ntotsikas.jpg";
+import FedericoZalazarImg from "../assets/federico-salazar-dr.png";
+import PerfumesImg from "../assets/perfume.jpg";
+import Perfumes2Img from "../assets/perfume-2.jpg";
+import MizarTechlineImg from "../assets/mizar-techline.jpg";
+import PadelImg from "../assets/padel-chico.jpg";
+import AutoImg from "../assets/auto-2.jpg";
+
+const projects = [
+  {
+    title: "María Paula Ntotsikas",
+    subtitle: "Salud",
+    tags: ["Diseño", "Contenido"],
+    img: MariaPaulaImg,
+    type: "featured",
+    link: "#",
+  },
+  {
+    title: "Federico Zalazar",
+    subtitle: "Salud",
+    tags: ["Diseño", "Contenido"],
+    img: FedericoZalazarImg,
+    type: "featured",
+    link: "#",
+  },
+  {
+    title: "Perfumes",
+    subtitle: "Lifestyle",
+    tags: ["Fotografía", "Diseño"],
+    img: PerfumesImg,
+    type: "featured",
+    link: "#",
+  },
+  {
+    title: "Perfumes 2",
+    subtitle: "Lifestyle",
+    tags: ["Fotografía", "Diseño"],
+    img: Perfumes2Img,
+    type: "featured",
+    link: "#",
+  },
+  {
+    title: "Mizar Techline",
+    subtitle: "Tecnología",
+    tags: ["Branding", "Web"],
+    img: MizarTechlineImg,
+    type: "standard",
+    link: "#",
+  },
+  {
+    title: "Padel",
+    subtitle: "Deportes",
+    tags: ["Fotografía", "Video"],
+    img: PadelImg,
+    type: "standard",
+    link: "#",
+  },
+  {
+    title: "Auto",
+    subtitle: "Automotriz",
+    tags: ["Fotografía", "Video"],
+    img: AutoImg,
+    type: "standard",
+    link: "#",
+  },
+];
+
+const featuredProjects = projects.filter((p) => p.type === "featured");
+const otherProjects = projects.filter((p) => p.type === "standard");
+---
+
+<section id="projects" class="bg-[#E0D7D3] py-20">
+  <div class="max-w-[1600px] mx-auto px-4 lg:px-8">
+    <div class="flex justify-center mb-4 mt-20 lg:mb-12 lg:mt-28">
+    <Image
+      src={projectsTitleImg}
+      alt="Nuestros Proyectos"
+      class="w-full lg:w-3/4 xl:w-2/3 h-auto object-contain"
+      loading="eager"
+    />
+  </div>
+  
+  <!-- Featured Projects Section -->
+  <div class="mb-12 lg:mb-20">
+    <div class="lg:flex lg:items-center lg:justify-between lg:mb-10">
+      <h3
+        class="text-3xl lg:text-4xl xl:text-5xl tracking-wider text-[#774F4F] mb-6 lg:mb-0 font-arialnova"
+      >
+        Los más destacados
+      </h3>
+      <div class="hidden lg:block h-[1px] bg-[#774F4F]/30 flex-1 ml-8"></div>
+    </div>
+    
+    <!-- Mobile: Stack layout -->
+    <div class="flex flex-col gap-8 lg:hidden">
+      {
+        featuredProjects.map((project) => (
+          <article class="project-card">
+            <div class="overflow-hidden">
+              <Image
+                src={project.img}
+                alt={project.title}
+                class="w-full h-64 object-cover"
+              />
+            </div>
+            <div class="pt-4">
+              <p class="text-xs uppercase tracking-wide text-[#774F4F] font-arialnova mb-2">
+                {project.tags.join(", ")}
+              </p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <h4 class="project-title text-xl font-medium font-['Arial_Nova']">
+                    {project.title}
+                  </h4>
+                  <p class="text-[#8B5A5A] font-['Arial_Nova']">
+                    {project.subtitle}
+                  </p>
+                </div>
+                <a
+                  href={project.link}
+                  class="flex items-center justify-center w-10 h-10 text-gray-700 hover:text-gray-900 transition-colors"
+                  aria-label={`Ver proyecto ${project.title}`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    
+    <!-- Desktop: Masonry-style grid -->
+    <div class="hidden lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
+      {
+        featuredProjects.map((project, index) => (
+          <article 
+            class="project-card-desktop group cursor-pointer"
+          >
+            <div class="relative overflow-hidden h-[320px] xl:h-[350px]">
+              <Image
+                src={project.img}
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <!-- Overlay on hover -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <!-- Content overlay -->
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <p class="text-xs uppercase tracking-widest text-white/80 font-arialnova mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  {project.tags.join(" · ")}
+                </p>
+                <h4 class="project-title-desktop text-2xl xl:text-3xl font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                  {project.title}
+                </h4>
+                <p class="text-white/70 font-['Arial_Nova'] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                  {project.subtitle}
+                </p>
+              </div>
+              
+              <!-- Arrow indicator -->
+              <div class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:bg-white/20">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-white transform -rotate-45"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Static info below image -->
+            <div class="pt-4">
+              <p class="text-xs uppercase tracking-wide text-[#774F4F]/70 font-arialnova mb-1">
+                {project.tags.join(" · ")}
+              </p>
+              <h4 class="project-title text-lg font-medium font-['Arial_Nova']">
+                {project.title}
+              </h4>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Other Projects Section -->
+  <div class="pb-16 lg:pb-24">
+    <div class="lg:flex lg:items-center lg:justify-between lg:mb-10">
+      <h3
+        class="text-3xl lg:text-4xl xl:text-5xl tracking-wider text-[#774F4F] mb-6 lg:mb-0 font-['Arial_Nova']"
+      >
+        Otros proyectos
+      </h3>
+      <div class="hidden lg:block h-[1px] bg-[#774F4F]/30 flex-1 ml-8"></div>
+    </div>
+    
+    <!-- Mobile: Stack layout -->
+    <div class="flex flex-col gap-8 lg:hidden">
+      {
+        otherProjects.map((project) => (
+          <article class="project-card">
+            <div class="overflow-hidden">
+              <Image
+                src={project.img}
+                alt={project.title}
+                class="w-full h-64 object-cover"
+              />
+            </div>
+            <div class="pt-4">
+              <p class="text-xs uppercase tracking-wide text-[#774F4F] font-arialnova mb-2">
+                {project.tags.join(", ")}
+              </p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <h4 class="project-title text-xl font-medium font-['Arial_Nova']">
+                    {project.title}
+                  </h4>
+                  <p class="text-[#8B5A5A] font-['Arial_Nova']">
+                    {project.subtitle}
+                  </p>
+                </div>
+                <a
+                  href={project.link}
+                  class="flex items-center justify-center w-10 h-10 text-gray-700 hover:text-gray-900 transition-colors"
+                  aria-label={`Ver proyecto ${project.title}`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    
+    <!-- Desktop: Horizontal row with equal cards -->
+    <div class="hidden lg:grid lg:grid-cols-3 gap-6 xl:gap-8">
+      {
+        otherProjects.map((project) => (
+          <article class="project-card-desktop group cursor-pointer">
+            <div class="relative overflow-hidden h-[280px] xl:h-[320px]">
+              <Image
+                src={project.img}
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <!-- Overlay on hover -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <!-- Content overlay -->
+              <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <p class="text-xs uppercase tracking-widest text-white/80 font-arialnova mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  {project.tags.join(" · ")}
+                </p>
+                <h4 class="project-title-desktop text-xl xl:text-2xl font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                  {project.title}
+                </h4>
+                <p class="text-white/70 font-['Arial_Nova'] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                  {project.subtitle}
+                </p>
+              </div>
+              
+              <!-- Arrow indicator -->
+              <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:bg-white/20">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 text-white transform -rotate-45"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Static info below image -->
+            <div class="pt-4 pb-2">
+              <p class="text-xs uppercase tracking-wide text-[#774F4F]/70 font-arialnova mb-1">
+                {project.tags.join(" · ")}
+              </p>
+              <h4 class="project-title text-lg font-medium font-['Arial_Nova']">
+                {project.title}
+              </h4>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-title {
+    font-weight: bold;
+    color: #774f4f;
+    position: relative;
+    -webkit-text-stroke: .5px #000000;
+    paint-order: stroke fill;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  .project-title-desktop {
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .project-card-desktop {
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card-desktop:hover {
+    transform: translateY(-4px);
+  }
+</style>

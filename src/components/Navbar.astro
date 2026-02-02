@@ -1,291 +1,329 @@
+---
+import RumboLogo from "../assets/logos/rumbo-logo.svg";
+---
+
+<!-- Overlay para cerrar el menú (cubre toda la página) -->
 <div
-	class="fixed z-40 bg-white rounded-full top-4 right-4 shadow-md p-3 cursor-pointer"
-	id="hamburger-btn"
->
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		x="0px"
-		y="0px"
-		width="30"
-		height="30"
-		viewBox="0 0 50 50"
-		fill="#774F4F"
-	>
-		<path
-			d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
-		></path>
-	</svg>
-</div>
+  class="fixed inset-0 bg-black/40 z-40 opacity-0 invisible lg:hidden"
+  id="nav-overlay"
+></div>
 
-<!-- Full Screen Navbar -->
-<div
-	class="fixed inset-0 w-screen h-screen bg-[#774F4F] z-50 flex flex-col opacity-0 invisible"
-	id="fullscreen-nav"
->
-	<!-- Contenedor central: logo + menú -->
-	<div class="flex flex-1 w-full px-6 md:px-12 items-center justify-center">
-		<div
-			class="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-20"
-		>
-			<!-- Logo -->
-			<div class="flex flex-col items-center md:items-start">
-				<img
-					src="/assets/logos/logo-rumbo-min.png"
-					alt="Logo"
-					class="w-[clamp(150px,20vw,400px)] mb-6"
-				/>
-			</div>
+<!-- Contenedor completo del Navbar (header + menú) -->
+<div class="fixed inset-0 z-50 flex flex-col pointer-events-none" id="nav-container">
+  
+  <!-- Header (siempre visible, arriba) -->
+  <header class="w-full pointer-events-auto">
+    <div class="flex items-center justify-between px-4 py-3 lg:px-8 lg:py-4 mx-auto max-w-[1600px]">
+      <!-- Logo -->
+      <a href="#" class="px-3 py-2 h-14 flex items-center text-[#774F4F]" id="nav-logo">
+        <RumboLogo class="h-10 w-auto max-h-10 lg:h-12"/>
+      </a>
 
-			<!-- Menú + contacto -->
-			<div
-				class="flex flex-col items-center md:items-start text-center md:text-left"
-			>
-				<!-- Links -->
-				<a
-					href="#home"
-					class="nav-item text-xl md:text-2xl lg:text-[3vw] font-bold text-[#E2D9D5] my-3 cursor-pointer hover:text-gray-200 opacity-0 translate-y-12 transition-colors duration-300 font-archive"
-					>INICIO</a
-				>
-				<a
-					href="#photography"
-					class="nav-item text-xl md:text-2xl lg:text-[3vw] font-bold text-[#E2D9D5] my-3 cursor-pointer hover:text-gray-200 opacity-0 translate-y-12 transition-colors duration-300 font-archive"
-					>FOTOGRAFÍA Y VIDEO</a
-				>
-				<a
-					href="#our-services"
-					class="nav-item text-xl md:text-2xl lg:text-[3vw] font-bold text-[#E2D9D5] my-3 cursor-pointer hover:text-gray-200 opacity-0 translate-y-12 transition-colors duration-300 font-archive"
-					>SERVICIOS</a
-				>
-				<a
-					href="#design"
-					class="nav-item text-xl md:text-2xl lg:text-[3vw] font-bold text-[#E2D9D5] my-3 cursor-pointer hover:text-gray-200 opacity-0 translate-y-12 transition-colors duration-300 font-archive"
-					>DISEÑO</a
-				>
-				<a
-					href="#cm"
-					class="nav-item text-xl md:text-2xl lg:text-[3vw] font-bold text-[#E2D9D5] my-3 cursor-pointer hover:text-gray-200 opacity-0 translate-y-12 transition-colors duration-300 font-archive"
-					>CONTENT MANAGEMENT</a
-				>
-				<a
-					href="#about-us"
-					class="nav-item text-xl md:text-2xl lg:text-[3vw] font-bold text-[#E2D9D5] my-3 cursor-pointer hover:text-gray-200 opacity-0 translate-y-12 transition-colors duration-300 font-archive"
-					>SOBRE NOSOTROS</a
-				>
-				<a
-					href="#contact-us"
-					class="nav-item text-xl md:text-2xl lg:text-[3vw] font-bold text-[#E2D9D5] my-3 cursor-pointer hover:text-gray-200 opacity-0 translate-y-12 transition-colors duration-300 font-archive"
-					>CONTACTO</a
-				>
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-3">
+      <a
+        href="#services"
+        class="desktop-nav-link bg-[#E0D7D3] text-[#774F4F] px-4 py-2 text-sm font-archive tracking-wide border-2 border-[#774F4F] hover:bg-[#774F4F] hover:text-[#E0D7D3] transition-colors"
+      >
+        SERVICIOS
+      </a>
+      <a
+        href="#projects"
+        class="desktop-nav-link bg-[#E0D7D3] text-[#774F4F] px-4 py-2 text-sm font-archive tracking-wide border-2 border-[#774F4F] hover:bg-[#774F4F] hover:text-[#E0D7D3] transition-colors"
+      >
+        PROYECTOS
+      </a>
+      <a
+        href="#about-us"
+        class="desktop-nav-link bg-[#E0D7D3] text-[#774F4F] px-4 py-2 text-sm font-archive tracking-wide border-2 border-[#774F4F] hover:bg-[#774F4F] hover:text-[#E0D7D3] transition-colors"
+      >
+        NOSOTROS
+      </a>
+      <a
+        href="#contact"
+        class="desktop-nav-link bg-[#E0D7D3] text-[#774F4F] px-4 py-2 text-sm font-archive tracking-wide border-2 border-[#774F4F] hover:bg-[#774F4F] hover:text-[#E0D7D3] transition-colors"
+      >
+        CONTACTO
+      </a>
+      <a
+        href="#contact"
+        class="desktop-nav-cta bg-[#774F4F] text-[#E0D7D3] px-6 py-2 text-sm font-archive tracking-wide border-2 border-[#774F4F] hover:bg-[#5a3b3b] transition-colors ml-2"
+      >
+        COMENZAR PROYECTO
+      </a>
+    </nav>
 
-				<!-- Contacto -->
-				<div class="mt-8 md:mt-10 text-[#E2D9D5] flex flex-col gap-4">
-					<div class="flex items-center gap-3">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							fill="#E0D7D3"
-							viewBox="0 0 30 30"
-						>
-							<path
-								d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"
-							></path>
-						</svg>
-						<span
-							class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold"
-							>Instagram:</span
-						>
-						<a
-							href="https://www.instagram.com/rumbo.comunicacion?igsh=NmFyc2t1YnpwcW01"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="text-sm sm:text-base md:text-lg hover:opacity-75 transition-opacity break-all font-normal"
-							>@rumbo.comunicación</a
-						>
-					</div>
-					<div class="flex items-center gap-3">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							x="0px"
-							y="0px"
-							width="30"
-							height="30"
-							viewBox="0 0 64 64"
-							fill="#E0D7D3"
-						>
-							<path
-								d="M47 34.837V52h7.533C56.448 52 58 50.448 58 48.533V29.486L47 34.837zM47 32l11-7.333v-5.426c0-1.914-.812-3.781-2.325-4.953-2.336-1.809-5.515-1.673-7.665.151L47 15.232V32zM19.814 33.822L32 41 44.349 33.726 43.443 18.023 32 27 20.718 18.149zM17.153 32.102v-16.75L15.99 14.44c-2.15-1.823-5.329-1.961-7.664-.151C6.812 15.46 6 17.328 6 19.243v5.424L17.153 32.102zM6 29.486v19.047C6 50.448 7.552 52 9.467 52H17V34.837L6 29.486z"
-							></path>
-						</svg>
-						<span
-							class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold"
-							>Email:</span
-						>
-						<a
-							href="mailto:rumbo@gmail.com"
-							class="text-sm sm:text-base md:text-lg hover:opacity-75 transition-opacity font-normal"
-							>rumbocomunicacion1@gmail.com</a
-						>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- Mobile Menu Button -->
+    <button
+      class="lg:hidden bg-[#E0D7D3] text-[#774F4F] px-2 py-1 text-lg font-archive tracking-wide border-2 border-[#774F4F]"
+      id="hamburger-btn"
+    >
+      MENU +
+    </button>
+    </div>
+  </header>
 
-	<!-- Botón de cerrar -->
-	<div
-		class="absolute top-5 right-5 w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer opacity-0 transform rotate-45"
-		id="close-btn"
-	>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 24 24"
-			class="w-7 h-7 fill-[#774F4F]"
-		>
-			<path
-				d="M18 6L6 18M6 6l12 12"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"></path>
-		</svg>
-	</div>
+  <!-- Espaciador flexible (empuja el menú hacia abajo) -->
+  <div class="flex-1"></div>
+
+  <!-- Bottom Menu (Mobile only) -->
+  <div
+    class="lg:hidden m-4 bg-[#774F4F] flex flex-col border-2 border-[#E0D7D3] opacity-0 invisible transform translate-y-full pointer-events-auto"
+    id="dropdown-nav"
+  >
+    <!-- Links de navegación -->
+    <div class="flex flex-col px-6 py-6">
+      <nav class="flex flex-col gap-2">
+        <a
+          href="#home"
+          class="nav-item text-4xl font-black text-[#E0D7D3] font-archive tracking-tight opacity-0 translate-y-4"
+          >INICIO</a
+        >
+        <a
+          href="#projects"
+          class="nav-item text-4xl font-black text-[#E0D7D3] font-archive tracking-tight opacity-0 translate-y-4"
+          >TRABAJO</a
+        >
+        <a
+          href="#about-us"
+          class="nav-item text-4xl font-black text-[#E0D7D3] font-archive tracking-tight opacity-0 translate-y-4"
+          >NOSOTROS</a
+        >
+        <a
+          href="#services"
+          class="nav-item text-4xl font-black text-[#E0D7D3] font-archive tracking-tight opacity-0 translate-y-4"
+          >SERVICIOS</a
+        >
+        <a
+          href="#contact"
+          class="nav-item text-4xl font-black text-[#E0D7D3] font-archive tracking-tight opacity-0 translate-y-4"
+          >CONTACTO</a
+        >
+      </nav>
+    </div>
+
+    <!-- Footer del menú con info de contacto -->
+    <div class="px-6 py-4 mt-10">
+      <div class="flex flex-col">
+        <a
+          href="mailto:rumbocomunicacion1@gmail.com"
+          class="hover:opacity-75 transition-opacity text-[#E0D7D3] font-bold text-lg font-archive mb-2"
+        >
+          RUMBOCOMUNICACION1@GMAIL.COM
+        </a>
+        <div
+          class="flex flex-row gap-4 text-[#E0D7D3] font-bold text-lg font-archive items-end"
+        >
+          <p>BUENOS AIRES, ARGENTINA</p>
+          <a
+            href="https://www.instagram.com/rumbo.comunicacion"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[#E0D7D3] font-bold text-lg font-archive hover:opacity-75 transition-opacity flex flex-1 justify-end"
+          >
+            INSTAGRAM
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
-	import gsap from "gsap";
-	import { SplitText } from "gsap/SplitText";
+  import gsap from "gsap";
 
-	gsap.registerPlugin(SplitText);
+  const hamburgerBtn = document.getElementById(
+    "hamburger-btn"
+  ) as HTMLButtonElement | null;
+  const dropdownNav = document.getElementById(
+    "dropdown-nav"
+  ) as HTMLElement | null;
+  const navOverlay = document.getElementById(
+    "nav-overlay"
+  ) as HTMLElement | null;
+  const navLogo = document.getElementById(
+    "nav-logo"
+  ) as HTMLElement | null;
+  const navItems = document.querySelectorAll<HTMLElement>(".nav-item");
 
-	// Tipado de los elementos del DOM
-	const hamburgerBtn = document.getElementById(
-		"hamburger-btn",
-	) as HTMLButtonElement | null;
-	const fullscreenNav = document.getElementById(
-		"fullscreen-nav",
-	) as HTMLElement | null;
-	const closeBtn = document.getElementById(
-		"close-btn",
-	) as HTMLButtonElement | null;
-	const navItems = document.querySelectorAll<HTMLElement>(".nav-item");
+  let isNavOpen = false;
+  let scrollPosition = 0;
+  let isFooterVisible = false;
 
-	let isNavOpen = false;
+  // Colores del logo
+  const logoColorDefault = "text-[#774F4F]";
+  const logoColorWhite = "text-[#E0D7D3]";
 
-	function openNav(): void {
-		if (isNavOpen) return;
-		isNavOpen = true;
+  function setLogoColor(isWhite: boolean): void {
+    if (!navLogo) return;
+    if (isWhite) {
+      navLogo.classList.remove(logoColorDefault);
+      navLogo.classList.add(logoColorWhite);
+    } else {
+      navLogo.classList.remove(logoColorWhite);
+      navLogo.classList.add(logoColorDefault);
+    }
+  }
 
-		// 🚫 Bloquear scroll en toda la página
-		document.body.classList.add("overflow-hidden");
+  function openNav(): void {
+    if (isNavOpen) return;
+    isNavOpen = true;
 
-		const splitTexts: SplitText[] = [];
-		navItems.forEach((item) => {
-			splitTexts.push(new SplitText(item, { type: "chars" }));
-		});
+    // Guardar posición actual del scroll
+    scrollPosition = window.scrollY;
 
-		const tl = gsap.timeline();
+    // Bloquear scroll
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.top = `-${scrollPosition}px`;
 
-		if (fullscreenNav && closeBtn) {
-			tl.set(fullscreenNav, { visibility: "visible" })
-				.to(fullscreenNav, {
-					opacity: 1,
-					duration: 0.5,
-					ease: "power2.out",
-				})
-				.to(
-					closeBtn,
-					{
-						opacity: 1,
-						rotation: 0,
-						duration: 0.3,
-						ease: "back.out(1.7)",
-					},
-					"-=0.3",
-				);
-		}
+    // Cambiar texto del botón
+    if (hamburgerBtn) {
+      hamburgerBtn.textContent = "CERRAR -";
+    }
 
-		splitTexts.forEach((splitText, index) => {
-			const item = navItems[index];
-			tl.to(
-				item,
-				{
-					opacity: 1,
-					y: 0,
-					duration: 0.1,
-				},
-				"-=0.1",
-			).from(
-				splitText.chars,
-				{
-					opacity: 0,
-					y: 50,
-					rotationX: -90,
-					stagger: 0.02,
-					duration: 0.2,
-					ease: "back.out(1.7)",
-				},
-				"-=0.1",
-			);
-		});
-	}
+    // Cambiar logo a blanco
+    setLogoColor(true);
 
-	function closeNav(): void {
-		if (!isNavOpen) return;
-		isNavOpen = false;
+    const tl = gsap.timeline();
 
-		// ✅ Restaurar scroll
-		document.body.classList.remove("overflow-hidden");
+    // Mostrar overlay
+    if (navOverlay) {
+      tl.set(navOverlay, { visibility: "visible" }).to(navOverlay, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    }
 
-		const tl = gsap.timeline();
-		tl.to(navItems, {
-			opacity: 0,
-			y: 50,
-			duration: 0.3,
-			stagger: 0.05,
-			ease: "power2.in",
-		});
+    // Mostrar dropdown (desde abajo)
+    if (dropdownNav) {
+      tl.set(dropdownNav, { visibility: "visible" }, 0).to(
+        dropdownNav,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        0
+      );
+    }
 
-		if (closeBtn) {
-			tl.to(
-				closeBtn,
-				{
-					opacity: 0,
-					rotation: 45,
-					duration: 0.2,
-				},
-				"-=0.2",
-			);
-		}
+    // Animar items
+    tl.to(
+      navItems,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        stagger: 0.05,
+        ease: "power3.out",
+      },
+      "-=0.1"
+    );
+  }
 
-		if (fullscreenNav) {
-			tl.to(
-				fullscreenNav,
-				{
-					opacity: 0,
-					duration: 0.4,
-					ease: "power2.in",
-				},
-				"-=0.1",
-			).set(fullscreenNav, { visibility: "hidden" });
-		}
-	}
+  function closeNav(): void {
+    if (!isNavOpen) return;
+    isNavOpen = false;
 
-	// Event listeners
-	hamburgerBtn?.addEventListener("click", openNav);
-	closeBtn?.addEventListener("click", closeNav);
+    // Restaurar scroll a la posición guardada
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
+    document.body.style.top = "";
+    window.scrollTo(0, scrollPosition);
 
-	// Cerrar con Escape
-	document.addEventListener("keydown", (e: KeyboardEvent) => {
-		if (e.key === "Escape" && isNavOpen) {
-			closeNav();
-		}
-	});
+    // Cambiar texto del botón
+    if (hamburgerBtn) {
+      hamburgerBtn.textContent = "MENU +";
+    }
 
-	// Cerrar al hacer click en un item del menú
-	navItems.forEach((item) => {
-		item.addEventListener("click", () => {
-			console.log(`Navegando a: ${item.textContent}`);
-			closeNav();
-		});
-	});
+    // Restaurar logo (blanco si footer visible, default si no)
+    setLogoColor(isFooterVisible);
+
+    const tl = gsap.timeline();
+
+    tl.to(navItems, {
+      opacity: 0,
+      y: 10,
+      duration: 0.15,
+      stagger: 0.02,
+      ease: "power2.in",
+    });
+
+    if (dropdownNav) {
+      tl.to(
+        dropdownNav,
+        {
+          opacity: 0,
+          y: -10,
+          duration: 0.2,
+          ease: "power2.in",
+        },
+        "-=0.1"
+      ).set(dropdownNav, { visibility: "hidden" });
+    }
+
+    if (navOverlay) {
+      tl.to(
+        navOverlay,
+        {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power2.in",
+        },
+        "-=0.2"
+      ).set(navOverlay, { visibility: "hidden" });
+    }
+  }
+
+  function toggleNav(): void {
+    if (isNavOpen) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  }
+
+  hamburgerBtn?.addEventListener("click", toggleNav);
+  navOverlay?.addEventListener("click", closeNav);
+
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Escape" && isNavOpen) {
+      closeNav();
+    }
+  });
+
+  navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      closeNav();
+    });
+  });
+
+  // Intersection Observer para cambiar logo cuando el footer es visible
+  const footer = document.querySelector("footer");
+  
+  if (footer && navLogo) {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.95 // Se activa cuando 95% del footer es visible (casi todo)
+    };
+
+    const footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isFooterVisible = entry.isIntersecting;
+        
+        // Solo cambiar si el menú no está abierto
+        if (!isNavOpen) {
+          setLogoColor(isFooterVisible);
+        }
+      });
+    }, observerOptions);
+
+    footerObserver.observe(footer);
+  }
 </script>
